@@ -14,7 +14,7 @@ describe('Character Routes', () => {
       expect(res.text).toBe('Falta enviar datos obligatorios');
     });
   
-    xit('should return status 201 and character object if the character was succesfully created', async () => {
+    it('should return status 201 and character object if the character was succesfully created', async () => {
       const res = await request(app)
                           .post('/character')
                           .send({code: 'FRAN', name: 'Franco', hp: 100.0, mana: 120.0});
@@ -30,7 +30,7 @@ describe('Character Routes', () => {
       });
     });
   
-    xit('should return status 404 and corresponding text if the database creation fails', async () => {
+    it('should return status 404 and corresponding text if the database creation fails', async () => {
       const res = await request(app)
                           .post('/character')
                           .send({code: 'FRANCO', name: 'Franco', hp: 100.0, mana: 120.0});
